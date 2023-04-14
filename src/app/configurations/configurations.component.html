@@ -1,0 +1,21 @@
+<section class="container mx-3 my-3">
+    <div class="row">
+        <div class="col-6">
+            <form (ngSubmit)="onSubmit()">
+                <div class="col mb-4" >
+                    <label class="form-label" for="instrumento">Instrumento:</label>
+                    <select class="form-control pl-0" id="instrumento" name="instrumento" [(ngModel)]="instrumentoSelecionado" >
+                        <option 
+                        *ngFor="let instrumento of instrumentos"
+                        [value]="instrumento.id">{{instrumento.nome}}</option>
+                    </select>
+                </div>
+                <div class="form-check col mb-4 ml-3">
+                    <input type="checkbox" class="form-check-input" id="withMetronome" name="withMetronome" [(ngModel)]="withMetronome">
+                    <label class="form-check-label" for="withMetronome">Usar metrônomo:</label>
+                </div>
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </form>
+        </div>
+    </div>
+</section>
